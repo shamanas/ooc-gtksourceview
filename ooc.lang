@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language id="ooc" _name="ooc" version="0.3" _section="Sources">
+<language id="ooc" _name="ooc" version="2.0" _section="Sources">
   <metadata>
     <property name="mimetypes">text/x-ooc</property>
     <property name="globs">*.ooc</property>

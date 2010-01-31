@@ -1,7 +1,7 @@
 <mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
-  <mime-type type="text/x-pluk">
-    <comment>Pluk Source</comment>
+  <mime-type type="text/x-ooc">
+    <comment>ooc Source</comment>
     <!-- more translated comment elements -->
-    <glob pattern="*.pluk"/>
+    <glob pattern="*.ooc"/>
   </mime-type>
 </mime-info>
