@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language id="pluk" _name="Pluk" version="2.0" _section="Sources">
+<language id="ooc" _name="ooc" version="0.3" _section="Sources">
   <metadata>
-    <property name="mimetypes">text/x-pluk</property>
-    <property name="globs">*.pluk</property>
+    <property name="mimetypes">text/x-ooc</property>
+    <property name="globs">*.ooc</property>
     <property name="line-comment-start">//</property>
     <property name="block-comment-start">/*</property>
     <property name="block-comment-end">*/</property>
@@ -73,19 +73,56 @@
     </context>
 
     <context id="primitive-types" style-ref="type">
-      <keyword>bool</keyword>
-      <keyword>byte</keyword>
-      <keyword>float</keyword>
-      <keyword>int</keyword>
-      <keyword>void</keyword>
-      <keyword>string</keyword>
+      <keyword>Int</keyword>
+      <keyword>Int8</keyword>
+      <keyword>Int16</keyword>
+      <keyword>Int32</keyword>
+      <keyword>Int64</keyword>
+      <keyword>Int80</keyword>
+      <keyword>Int128</keyword>
+    
+      <keyword>UInt</keyword>
+      <keyword>UInt8</keyword>
+      <keyword>UInt16</keyword>
+      <keyword>UInt32</keyword>
+      <keyword>UInt64</keyword>
+      <keyword>UInt80</keyword>
+      <keyword>UInt128</keyword>
+    
+      <keyword>Octet</keyword>
+      <keyword>Short</keyword>
+      <keyword>UShort</keyword>
+      <keyword>Long</keyword>
+      <keyword>ULong</keyword>
+      <keyword>LLong</keyword>
+      <keyword>ULLong</keyword>
+    
+      <keyword>Float</keyword>
+      <keyword>Double</keyword>
+      <keyword>LDouble</keyword>
+      <keyword>Float32</keyword>
+      <keyword>Float64</keyword>
+      <keyword>Float128</keyword>
+      
+      <keyword>Char</keyword>
+      <keyword>UChar</keyword>
+      <keyword>SChar</keyword>
+      <keyword>WChar</keyword>
+      <keyword>String</keyword>
+     
+      <keyword>Void</keyword>
+      <keyword>Pointer</keyword>
+      <keyword>Bool</keyword>
+      <keyword>SizeT</keyword>
+      <keyword>This</keyword>
     </context>
 
     <context id="storage-class" style-ref="storage-class">
       <keyword>abstract</keyword>
       <keyword>static</keyword>
       <keyword>extern</keyword>
-      <keyword>override</keyword>
+      <keyword>const</keyword>
+      <keyword>proto</keyword>
     </context>
 
     <context id="scope-declarations" style-ref="scope-declaration">
@@ -97,29 +134,30 @@
 
     <context id="flow" style-ref="keyword">
       <keyword>break</keyword>
-      <keyword>catch</keyword>
       <keyword>continue</keyword>
       <keyword>else</keyword>
       <keyword>finally</keyword>
       <keyword>for</keyword>
       <keyword>if</keyword>
+      <keyword>match</keyword>
       <keyword>return</keyword>
-      <keyword>recur</keyword>
-      <keyword>throw</keyword>
-      <keyword>try</keyword>
       <keyword>while</keyword>
-      <keyword>with</keyword>
-      <keyword>scope</keyword>
     </context>
 
     <context id="memory" style-ref="keyword">
-      <keyword>new</keyword>
-      <keyword>this</keyword>
+      <keyword>new</keyword> <!-- new isn't really a keyword, but its nice to have it colored =) -->
+      <keyword>this</keyword> <!-- same here -->
     </context>
 
     <context id="future-reserved-words" style-ref="reserved">
+      <keyword>catch</keyword>
       <keyword>const</keyword>
       <keyword>goto</keyword>
+      <keyword>finally</keyword>
+      <keyword>throw</keyword>
+      <keyword>try</keyword>
+      <keyword>with</keyword>
+      <keyword>scope</keyword>
     </context>
 
     <context id="null-value" style-ref="null-value">
@@ -140,7 +178,7 @@
       </match>
     </context>
 
-    <context id="pluk">
+    <context id="ooc">
       <include>
         <context ref="string"/>
         <context ref="line-comment"/>
