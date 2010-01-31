@@ -22,7 +22,6 @@
 -->
 <language id="ooc" _name="ooc" version="2.0" _section="Sources">
   <metadata>
-    <property name="mimetypes">text/x-ooc</property>
     <property name="globs">*.ooc</property>
     <property name="line-comment-start">//</property>
     <property name="block-comment-start">/*</property>
@@ -41,7 +40,10 @@
     <style id="keyword" _name="Keyword" map-to="def:keyword"/>
     <style id="null-value" _name="Null Value" map-to="def:special-constant"/>
     <style id="boolean" _name="Boolean value" map-to="def:boolean"/>
-    <style id="number" _name="Number" map-to="def:decimal"/>
+    <style id="floating-point"    _name="Floating point number" map-to="def:floating-point"/>
+    <style id="decimal"           _name="Decimal number"      map-to="def:decimal"/>
+    <style id="octal"             _name="Octal number"        map-to="def:base-n-integer"/>
+    <style id="hexadecimal"       _name="Hexadecimal number"  map-to="def:base-n-integer"/>
     <style id="reserved" _name="Future Reserved Keywords" map-to="def:error"/>
     <style id="type" _name="Data Type" map-to="def:type"/>
   </styles>
@@ -176,8 +178,8 @@
     </context>
 
     <context id="memory" style-ref="keyword">
-      <keyword>new</keyword> <!-- new isn't really a keyword, but its nice to have it colored =) -->
-      <keyword>this</keyword> <!-- same here -->
+      <keyword>new</keyword>
+      <keyword>this</keyword>
     </context>
 
     <context id="future-reserved-words" style-ref="reserved">
@@ -200,13 +202,39 @@
       <keyword>true</keyword>
     </context>
 
-    <context id="numeric" style-ref="number">
-      <match extended="true">
-        (\b([0-9]+|0[xX][0-9a-fA-F]+)[Ll]?\b|
-         \b(([0-9]+[Ee][-]?[0-9]+|
-            ([0-9]*\.[0-9]+|[0-9]+\.)([Ee][-]?[0-9]+)?)[fFdD]?|
-            [0-9]+[FfDd]))
-      </match>
+    <!-- http://www.lysator.liu.se/c/ANSI-C-grammar-l.html -->
+    <context id="float" style-ref="floating-point">
+        <match extended="true">
+            (?&lt;![\w\.])
+            ((\.[0-9]+ | [0-9]+\.[0-9]*) ([Ee][+-]?[0-9]*)? |
+             ([0-9]+[Ee][+-]?[0-9]*))
+            [fFlL]?
+            (?![\w\.])
+        </match>
+    </context>
+
+    <context id="hexadecimal" style-ref="hexadecimal">
+        <match extended="true">
+            (?&lt;![\w\.])
+            0[xX][a-fA-F0-9]+[uUlL]*
+            (?![\w\.])
+        </match>
+    </context>
+
+    <context id="octal" style-ref="octal">
+        <match extended="true">
+            (?&lt;![\w\.])
+            0[cC][0-7]+[uUlL]*
+            (?![\w\.])
+        </match>
+    </context>
+
+    <context id="decimal" style-ref="decimal">
+        <match extended="true">
+            (?&lt;![\w\.])
+            [0-9]+[uUlL]*
+            (?![\w\.])
+        </match>
     </context>
 
     <context id="ooc">
@@ -225,7 +253,9 @@
         <context ref="future-reserved-words"/>
         <context ref="null-value"/>
         <context ref="boolean"/>
-        <context ref="numeric"/>
+        <context ref="decimal"/>
+        <context ref="hexadecimal"/>
+        <context ref="octal"/>
       </include>
     </context>
 
