@@ -1,5 +1,12 @@
 GtkSourceView language definition file for the ooc language.
 
+Installing
+----------
+
+'make install'
+
+enjoy!
+
 License
 -------
 
