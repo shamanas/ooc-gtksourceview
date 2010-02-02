@@ -96,6 +96,8 @@
     <context id="declarations" style-ref="declaration">
       <keyword>class</keyword>
       <keyword>cover</keyword>
+      <keyword>extends</keyword>
+      <keyword>from</keyword>
       <keyword>func</keyword>
       <keyword>implement</keyword>
       <keyword>interface</keyword>
