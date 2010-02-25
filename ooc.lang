@@ -33,6 +33,7 @@
     <style id="error" _name="Error" map-to="def:error"/>
     <style id="escaped-character" _name="Escaped Character" map-to="def:special-char"/>
     <style id="string" _name="String" map-to="def:string"/>
+    <style id="character" _name="Character" map-to="def:character"/>
     <style id="external" _name="External" map-to="def:preprocessor"/>
     <style id="declaration" _name="Declaration" map-to="def:type"/>
     <style id="storage-class" _name="Storage Class" map-to="def:type"/>
@@ -62,7 +63,7 @@
       <start>"</start>
       <end>"</end>
       <include>
-        <context id="escaped-character" style-ref="escaped-character">
+        <context id="string-escaped-character" style-ref="escaped-character">
           <match>\%{escaped-character}</match>
         </context>
       </include>
