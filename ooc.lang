@@ -68,6 +68,16 @@
       </include>
     </context>
 
+    <context id="character" style-ref="character" end-at-line-end="true">
+      <start>'</start>
+      <end>'</end>
+      <include>
+        <context id="escaped-character" style-ref="escaped-character">
+          <match>\%{escaped-character}</match>
+        </context>
+      </include>
+    </context>
+
     <context id="line-comment" style-ref="comment" end-at-line-end="true">
       <start>//</start>
       <include>
@@ -243,6 +253,7 @@
     <context id="ooc">
       <include>
         <context ref="string"/>
+        <context ref="character"/>
         <context ref="line-comment"/>
         <context ref="block-comment"/>
         <context ref="close-comment-outside-comment"/>
