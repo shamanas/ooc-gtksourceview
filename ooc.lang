@@ -107,10 +107,12 @@
     <context id="declarations" style-ref="declaration">
       <keyword>class</keyword>
       <keyword>cover</keyword>
+      <keyword>enum</keyword>
       <keyword>extends</keyword>
+      <keyword>extend</keyword>
       <keyword>from</keyword>
       <keyword>func</keyword>
-      <keyword>implement</keyword>
+      <keyword>implements</keyword>
       <keyword>interface</keyword>
       <keyword>operator</keyword>
     </context>
@@ -152,11 +154,14 @@
       <keyword>SChar</keyword>
       <keyword>WChar</keyword>
       <keyword>String</keyword>
+      <keyword>CString</keyword>
+      <keyword>Buffer</keyword>
      
       <keyword>Void</keyword>
       <keyword>Pointer</keyword>
       <keyword>Bool</keyword>
       <keyword>SizeT</keyword>
+      <keyword>SSizeT</keyword>
       <keyword>This</keyword>
     </context>
 
