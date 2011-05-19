@@ -163,6 +163,9 @@
       <keyword>SizeT</keyword>
       <keyword>SSizeT</keyword>
       <keyword>This</keyword>
+      
+      <keyword>Class</keyword>
+      <keyword>Object</keyword>
     </context>
 
     <context id="storage-class" style-ref="storage-class">
