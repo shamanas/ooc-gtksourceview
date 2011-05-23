@@ -176,6 +176,7 @@
       <keyword>const</keyword>
       <keyword>proto</keyword>
       <keyword>unmangled</keyword>
+      <keyword>super</keyword>
     </context>
 
     <context id="scope-declarations" style-ref="scope-declaration">
@@ -195,6 +196,7 @@
       <keyword>for</keyword>
       <keyword>if</keyword>
       <keyword>in</keyword>
+      <keyword>into</keyword>
       <keyword>match</keyword>
       <keyword>case</keyword>
       <keyword>return</keyword>
